@@ -676,3 +676,91 @@ function animateNumber(el, start, end, suffix) {
     }, 50);
 }
 setTimeout(animateCounters, 1000);
+
+
+// ===== COOKIE CONSENT =====
+const cookieConsent = document.getElementById('cookieConsent');
+const cookieAccept = document.getElementById('cookieAccept');
+const cookieReject = document.getElementById('cookieReject');
+
+if (!localStorage.getItem('luxdeal_cookies')) {
+    setTimeout(() => cookieConsent.classList.add('active'), 2000);
+}
+
+cookieAccept.addEventListener('click', () => {
+    localStorage.setItem('luxdeal_cookies', 'all');
+    cookieConsent.classList.remove('active');
+});
+
+cookieReject.addEventListener('click', () => {
+    localStorage.setItem('luxdeal_cookies', 'essential');
+    cookieConsent.classList.remove('active');
+});
+
+// ===== PWA INSTALL PROMPT =====
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    // Show custom install banner after 15 seconds
+    if (!localStorage.getItem('luxdeal_pwa_dismissed')) {
+        setTimeout(showPWABanner, 15000);
+    }
+});
+
+function showPWABanner() {
+    if (!deferredPrompt) return;
+
+    const banner = document.createElement('div');
+    banner.className = 'pwa-install-banner';
+    banner.id = 'pwaInstallBanner';
+    banner.innerHTML = `
+        <span class="pwa-icon">💎</span>
+        <div class="pwa-text">
+            <h4>Instalar LUXDEAL</h4>
+            <p>Accede rapido desde tu pantalla de inicio</p>
+        </div>
+        <div class="pwa-actions">
+            <button class="pwa-install-btn" id="pwaInstallBtn">Instalar</button>
+            <button class="pwa-dismiss-btn" id="pwaDismissBtn">&times;</button>
+        </div>
+    `;
+    document.body.appendChild(banner);
+
+    setTimeout(() => banner.classList.add('active'), 100);
+
+    document.getElementById('pwaInstallBtn').addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+                showNotification('LUXDEAL instalada! Buscala en tu pantalla de inicio.');
+            }
+            deferredPrompt = null;
+        }
+        banner.classList.remove('active');
+        setTimeout(() => banner.remove(), 500);
+    });
+
+    document.getElementById('pwaDismissBtn').addEventListener('click', () => {
+        localStorage.setItem('luxdeal_pwa_dismissed', 'true');
+        banner.classList.remove('active');
+        setTimeout(() => banner.remove(), 500);
+    });
+}
+
+// ===== FAQ ACCORDION =====
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+        // Toggle clicked
+        if (!wasActive) item.classList.add('active');
+    });
+});
