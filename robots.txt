@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://tu-dominio.com/sitemap.xml
+
+# Bloquear archivos internos de config
+Disallow: /config-afiliados.js
+Disallow: /error-monitor.js
+Disallow: /GUIA-AFILIADOS.md

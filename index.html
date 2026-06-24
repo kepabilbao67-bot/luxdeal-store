@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXDEAL - Ofertas Premium Verificadas</title>
+    <meta name="description" content="Las mejores ofertas verificadas en ropa de marca, alimentacion gourmet y productos premium. Enviado directamente por Amazon, El Corte Ingles y mas.">
+    <meta property="og:title" content="LUXDEAL - Ofertas Premium Verificadas">
+    <meta property="og:description" content="Descuentos reales en marcas premium. Envio directo desde tiendas oficiales.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot-ia.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1b4332">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LUXDEAL">
+
+    <!-- SEO Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "LUXDEAL",
+        "alternateName": "LuxDeal Ofertas Premium",
+        "url": "https://tu-dominio.com",
+        "description": "Marketplace de ofertas premium verificadas en ropa de marca, alimentacion gourmet, electronica y belleza.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://tu-dominio.com/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LUXDEAL",
+        "url": "https://tu-dominio.com",
+        "logo": "https://tu-dominio.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish", "English"]
+        },
+        "sameAs": [
+            "https://instagram.com/luxdeal",
+            "https://twitter.com/luxdeal",
+            "https://t.me/luxdeal"
+        ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Promo Banner -->
+    <div class="promo-banner" id="promoBanner">
+        <div class="container promo-inner">
+            <span class="promo-text">🔥 OFERTAS FLASH verificadas — Hasta -70% en marcas premium — Termina en:</span>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item"><span id="hours">00</span><small>hrs</small></div>
+                <div class="countdown-item"><span id="minutes">00</span><small>min</small></div>
+                <div class="countdown-item"><span id="seconds">00</span><small>seg</small></div>
+            </div>
+            <button class="promo-close" id="promoClose">&times;</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">LUX<span>DEAL</span></a>
+            <nav class="nav">
+                <a href="#ofertas">Ofertas del Dia</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn" id="searchBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
+                <button class="cart-btn" id="cartBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Marketplace de Ofertas Verificadas</span>
+                <h1>Ofertas <em>premium</em> reales, enviadas por las mejores tiendas</h1>
+                <p>Encontramos los mejores descuentos en ropa de marca, gastronomia gourmet y productos de lujo. Todo enviado directamente por Amazon, El Corte Ingles, Zalando y mas.</p>
+                <div class="hero-buttons">
+                    <a href="#ofertas" class="btn btn-primary">Ver Ofertas de Hoy</a>
+                    <a href="#como-funciona" class="btn btn-outline">Como Funciona</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>Ofertas diarias</span>
+                    </div>
+                    <div class="stat">
+                        <strong>-70%</strong>
+                        <span>Descuento max</span>
+                    </div>
+                    <div class="stat">
+                        <strong>100%</strong>
+                        <span>Verificadas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=700&fit=crop" alt="Shopping premium">
+                    <div class="hero-floating-card">
+                        <span class="discount">-70%</span>
+                        <span class="text">Oferta verificada hoy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Trust Bar - Tiendas Asociadas -->
+    <section class="trust-bar">
+        <div class="container">
+            <p>Ofertas verificadas de:</p>
+            <div class="trust-logos">
+                <span>Amazon</span>
+                <span>Zalando</span>
+                <span>El Corte Ingles</span>
+                <span>ASOS</span>
+                <span>Gourmet</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categorias">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Categorias</span>
+                <h2>Explora por categoria</h2>
+                <p>Selecciona la categoria que te interesa y encuentra las mejores ofertas verificadas.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="ropa">
+                    <div class="category-icon">👔</div>
+                    <h3>Ropa de Marca</h3>
+                    <p>Nike, Adidas, Lacoste, Ralph Lauren, Hugo Boss y mas</p>
+                    <span class="category-count">150+ ofertas</span>
+                </div>
+                <div class="category-card" data-category="alimentacion">
+                    <div class="category-icon">🍷</div>
+                    <h3>Alimentacion Delicatessen</h3>
+                    <p>Jamon iberico, vinos premium, aceite AOVE, quesos artesanos</p>
+                    <span class="category-count">80+ ofertas</span>
+                </div>
+                <div class="category-card" data-category="electronica">
+                    <div class="category-icon">📱</div>
+                    <h3>Electronica Premium</h3>
+                    <p>Apple, Samsung, Sony, Bose, DJI y mas</p>
+                    <span class="category-count">120+ ofertas</span>
+                </div>
+                <div class="category-card" data-category="belleza">
+                    <div class="category-icon">✨</div>
+                    <h3>Belleza & Lujo</h3>
+                    <p>Chanel, Dior, La Mer, Tom Ford, Jo Malone</p>
+                    <span class="category-count">90+ ofertas</span>
+                </div>
+                <div class="category-card" data-category="hogar">
+                    <div class="category-icon">🏠</div>
+                    <h3>Hogar Premium</h3>
+                    <p>Le Creuset, Dyson, Nespresso, Philips Hue</p>
+                    <span class="category-count">70+ ofertas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Ofertas del Dia -->
+    <section class="products" id="ofertas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Ofertas del Dia</span>
+                <h2>Descuentos verificados de hoy</h2>
+                <p>Todas las ofertas son reales y verificables. Haz clic para comprar directamente en la tienda oficial.</p>
+            </div>
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="todos">Todos</button>
+                <button class="filter-tab" data-filter="ropa">Ropa</button>
+                <button class="filter-tab" data-filter="alimentacion">Gourmet</button>
+                <button class="filter-tab" data-filter="electronica">Electronica</button>
+                <button class="filter-tab" data-filter="belleza">Belleza</button>
+                <button class="filter-tab" data-filter="hogar">Hogar</button>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1: Ropa -->
+                <div class="product-card" data-product="1" data-category="ropa">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" alt="Nike Air Max 90">
+                        <span class="product-badge">-45%</span>
+                        <span class="product-source">Amazon</span>
+                        <button class="quick-add" data-name="Nike Air Max 90" data-price="82.99">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ropa de Marca</div>
+                        <h3>Nike Air Max 90 Premium</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(2,847 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$82.99</span>
+                            <span class="original-price">$149.99</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en Amazon</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Alimentacion -->
+                <div class="product-card" data-product="2" data-category="alimentacion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=400&h=400&fit=crop" alt="Jamon Iberico 5J">
+                        <span class="product-badge">-35%</span>
+                        <span class="product-source">El Corte Ingles</span>
+                        <button class="quick-add" data-name="Jamon Iberico 5J Cinco Jotas" data-price="189.00">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Alimentacion Delicatessen</div>
+                        <h3>Jamon Iberico 5J Cinco Jotas</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(1,203 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$189.00</span>
+                            <span class="original-price">$289.00</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en El Corte Ingles</a>
+                    </div>
+                </div>
+                <!-- Product 3: Electronica -->
+                <div class="product-card" data-product="3" data-category="electronica">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Sony WH-1000XM5">
+                        <span class="product-badge">-40%</span>
+                        <span class="product-source">Amazon</span>
+                        <button class="quick-add" data-name="Sony WH-1000XM5" data-price="228.00">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Electronica Premium</div>
+                        <h3>Sony WH-1000XM5 Auriculares</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(5,621 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$228.00</span>
+                            <span class="original-price">$379.99</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en Amazon</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Belleza -->
+                <div class="product-card" data-product="4" data-category="belleza">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=400&fit=crop" alt="Dior Sauvage">
+                        <span class="product-badge">-30%</span>
+                        <span class="product-source">Sephora</span>
+                        <button class="quick-add" data-name="Dior Sauvage EDT 100ml" data-price="72.50">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Belleza & Lujo</div>
+                        <h3>Dior Sauvage EDT 100ml</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(8,432 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$72.50</span>
+                            <span class="original-price">$103.50</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en Sephora</a>
+                    </div>
+                </div>
+                <!-- Product 5: Ropa -->
+                <div class="product-card" data-product="5" data-category="ropa">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop" alt="Ralph Lauren Polo">
+                        <span class="product-badge">-55%</span>
+                        <span class="product-source">Zalando</span>
+                        <button class="quick-add" data-name="Ralph Lauren Polo Classic Fit" data-price="54.99">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ropa de Marca</div>
+                        <h3>Ralph Lauren Polo Classic Fit</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            <span class="reviews">(967 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$54.99</span>
+                            <span class="original-price">$119.99</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en Zalando</a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Alimentacion -->
+                <div class="product-card" data-product="6" data-category="alimentacion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=400&fit=crop" alt="Vino Ribera del Duero Reserva">
+                        <span class="product-badge">-40%</span>
+                        <span class="product-source">Bodeboca</span>
+                        <button class="quick-add" data-name="Vega Sicilia Valbuena 5" data-price="95.00">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Alimentacion Delicatessen</div>
+                        <h3>Vega Sicilia Valbuena 5 Aniversario</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(342 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$95.00</span>
+                            <span class="original-price">$158.00</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en Bodeboca</a>
+                    </div>
+                </div>
+                <!-- Product 7: Hogar -->
+                <div class="product-card" data-product="7" data-category="hogar">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop" alt="Dyson V15 Detect">
+                        <span class="product-badge">-30%</span>
+                        <span class="product-source">Amazon</span>
+                        <button class="quick-add" data-name="Dyson V15 Detect Absolute" data-price="489.00">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Hogar Premium</div>
+                        <h3>Dyson V15 Detect Absolute</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(3,104 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$489.00</span>
+                            <span class="original-price">$699.00</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en Amazon</a>
+                    </div>
+                </div>
+
+                <!-- Product 8: Electronica -->
+                <div class="product-card" data-product="8" data-category="electronica">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1546868871-af0de0ae72be?w=400&h=400&fit=crop" alt="Apple AirPods Pro 2">
+                        <span class="product-badge">-25%</span>
+                        <span class="product-source">Amazon</span>
+                        <button class="quick-add" data-name="Apple AirPods Pro 2" data-price="189.99">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Electronica Premium</div>
+                        <h3>Apple AirPods Pro 2 USB-C</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(12,847 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$189.99</span>
+                            <span class="original-price">$249.99</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en Amazon</a>
+                    </div>
+                </div>
+                <!-- Product 9: Belleza -->
+                <div class="product-card" data-product="9" data-category="belleza">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop" alt="La Mer Creme">
+                        <span class="product-badge">-20%</span>
+                        <span class="product-source">El Corte Ingles</span>
+                        <button class="quick-add" data-name="La Mer Moisturizing Cream 60ml" data-price="264.00">+ Agregar</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Belleza & Lujo</div>
+                        <h3>La Mer Moisturizing Cream 60ml</h3>
+                        <div class="product-rating">
+                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="reviews">(1,856 resenas)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$264.00</span>
+                            <span class="original-price">$330.00</span>
+                        </div>
+                        <a href="#" class="verify-link" target="_blank">&#10003; Verificar en El Corte Ingles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="products-cta">
+                <a href="#" class="btn btn-primary">Ver Todas las Ofertas</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Como Funciona -->
+    <section class="features" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Como Funciona</span>
+                <h2>Compra segura, envio directo</h2>
+                <p>No somos una tienda tradicional. Somos tu buscador de ofertas premium verificadas.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </div>
+                    <h3>1. Buscamos Ofertas</h3>
+                    <p>Rastreamos diariamente Amazon, El Corte Ingles, Zalando, ASOS y +50 tiendas top para encontrar los mejores descuentos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>2. Verificamos</h3>
+                    <p>Cada oferta es verificada manualmente. Comprobamos que el descuento sea real comparando con el precio historico.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3>3. Compras Directo</h3>
+                    <p>Te redirigimos a la tienda oficial. Tu compra, pago y garantia son directamente con Amazon, Zalando, etc.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h3>4. Envio por la Tienda</h3>
+                    <p>El producto lo envia la tienda oficial (Amazon Prime, envio Zalando, etc). Con todas sus garantias y devoluciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Garantias / Trust Section -->
+    <section class="about" id="garantias">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=600&fit=crop" alt="Compra segura" class="about-img-1">
+                    <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=300&h=350&fit=crop" alt="Envio directo" class="about-img-2">
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">Tu Garantia</span>
+                    <h2>Compra con total confianza</h2>
+                    <p>Todas las compras se realizan directamente en las tiendas oficiales. Tu tienes la garantia completa del vendedor: devoluciones, soporte al cliente y envio rastreable.</p>
+                    <p>Nosotros solo te mostramos las mejores ofertas. El pago, envio y atencion al cliente lo gestionan directamente Amazon, El Corte Ingles, Zalando u otra tienda oficial.</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <strong>Pago Seguro</strong>
+                            <span>Directo en la tienda oficial</span>
+                        </div>
+                        <div class="highlight">
+                            <strong>Envio Oficial</strong>
+                            <span>Por Amazon, Zalando, etc.</span>
+                        </div>
+                        <div class="highlight">
+                            <strong>Devoluciones</strong>
+                            <span>Politica de cada tienda</span>
+                        </div>
+                    </div>
+                    <a href="#ofertas" class="btn btn-primary">Ver Ofertas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Comunidad</span>
+                <h2>Lo que dicen nuestros usuarios</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Encontre unas Nike Air Max con un 50% de descuento real en Amazon. Comprobado y recibido en 2 dias con Prime. Increible servicio!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Carlos M.">
+                        <div>
+                            <strong>Carlos M.</strong>
+                            <span>Comprador verificado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"El jamon iberico que encontraron en oferta era real. Lo compre en El Corte Ingles con un 35% menos. Ahora reviso la pagina todos los dias."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face" alt="Laura P.">
+                        <div>
+                            <strong>Laura P.</strong>
+                            <span>Compradora verificada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Me ahorre 200 euros en unos auriculares Sony. La oferta era de Amazon y llego al dia siguiente. Todo verificado y transparente."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Ana R.">
+                        <div>
+                            <strong>Ana R.</strong>
+                            <span>Compradora verificada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Recibe las mejores ofertas cada dia</h2>
+                <p>Suscribete y te enviamos las ofertas premium mas exclusivas directamente a tu correo antes que nadie.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Tu correo electronico" required>
+                    <button type="submit" class="btn btn-primary">Suscribirme Gratis</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contacto</span>
+                <h2>Hablemos</h2>
+                <p>Tienes alguna pregunta sobre como funcionamos? Estamos aqui para ayudarte.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <div>
+                            <strong>Email</strong>
+                            <span>ofertas@luxdeal.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <div>
+                            <strong>WhatsApp Ofertas</strong>
+                            <span>+34 612 345 678</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <strong>Sede</strong>
+                            <span>Madrid, Espana</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Telegram</a>
+                        <a href="#" class="social-link">Twitter/X</a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu correo" required>
+                    <textarea placeholder="Tu mensaje o sugerencia de producto" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">LUX<span>DEAL</span></a>
+                    <p>Tu buscador de ofertas premium verificadas. Compra directo en las mejores tiendas con los mejores descuentos.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Categorias</h4>
+                    <a href="#">Ropa de Marca</a>
+                    <a href="#">Alimentacion Gourmet</a>
+                    <a href="#">Electronica</a>
+                    <a href="#">Belleza & Lujo</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Tiendas</h4>
+                    <a href="#">Ofertas Amazon</a>
+                    <a href="#">Ofertas Zalando</a>
+                    <a href="#">Ofertas El Corte Ingles</a>
+                    <a href="#">Ofertas ASOS</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="legal.html">Como Funciona</a>
+                    <a href="legal.html">Aviso Legal</a>
+                    <a href="legal.html">Politica de Privacidad</a>
+                    <a href="legal.html">Politica de Afiliados</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LUXDEAL. Somos un servicio de comparacion de precios con <a href="legal.html" style="color:rgba(255,255,255,0.7);text-decoration:underline;">enlaces de afiliado</a>. Los productos son vendidos y enviados por las tiendas indicadas.</p>
+                <div class="payment-methods">
+                    <span>Amazon</span>
+                    <span>Zalando</span>
+                    <span>ASOS</span>
+                    <span>ECI</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/34612345678?text=Hola!%20Quiero%20info%20sobre%20las%20ofertas%20premium" class="whatsapp-float" target="_blank" id="whatsappFloat">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span class="whatsapp-tooltip">Ofertas por WhatsApp</span>
+    </a>
+
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Tu Lista de Ofertas</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <p>Tu lista esta vacia</p>
+                <a href="#ofertas" class="btn btn-outline">Ver Ofertas</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total ahorro estimado:</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">Ir a Comprar</button>
+            <a href="https://wa.me/34612345678?text=Hola!%20Quiero%20comprar%20estos%20productos" class="btn btn-whatsapp btn-full" target="_blank">
+                Pedir Ayuda por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Buscar ofertas..." autocomplete="off">
+                    <button class="search-close-btn" id="searchClose">ESC</button>
+                </div>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-placeholder">
+                    <p>Busca por marca, producto o categoria</p>
+                    <div class="search-suggestions">
+                        <span class="search-tag" data-query="nike">Nike</span>
+                        <span class="search-tag" data-query="sony">Sony</span>
+                        <span class="search-tag" data-query="jamon">Jamon</span>
+                        <span class="search-tag" data-query="dior">Dior</span>
+                        <span class="search-tag" data-query="dyson">Dyson</span>
+                        <span class="search-tag" data-query="apple">Apple</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discount Popup -->
+    <div class="discount-popup" id="discountPopup">
+        <div class="popup-content">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <div class="popup-icon">💎</div>
+            <h3>Ofertas VIP Exclusivas</h3>
+            <p>Suscribete y recibe las ofertas mas exclusivas antes que nadie. Acceso a descuentos de hasta -70% en marcas premium.</p>
+            <form class="popup-form" id="popupForm">
+                <input type="email" placeholder="Tu correo electronico" required>
+                <button type="submit" class="btn btn-primary btn-full">Quiero Ofertas VIP</button>
+            </form>
+            <span class="popup-dismiss" id="popupDismiss">No gracias, prefiero pagar precio completo</span>
+        </div>
+    </div>
+
+    <script src="config-afiliados.js"></script>
+    <script src="daily-deals-engine.js"></script>
+    <script src="error-monitor.js"></script>
+    <script src="analytics.js"></script>
+    <script src="script.js"></script>
+    <script src="chatbot-ia.js"></script>
+    <script>
+        // Register Service Worker (PWA)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('[PWA] Service Worker registered:', reg.scope))
+                    .catch(err => console.log('[PWA] SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
