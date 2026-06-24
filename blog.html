@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Ofertas - LUXDEAL | Guias y Comparativas Premium</title>
+    <meta name="description" content="Blog de ofertas premium: comparativas, guias de compra y analisis de los mejores productos con descuento en Amazon, Zalando y mas.">
+    <meta property="og:title" content="Blog LUXDEAL - Guias y Comparativas Premium">
+    <meta property="og:description" content="Analisis, comparativas y guias de compra de productos premium con los mejores descuentos.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot-ia.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1b4332">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-page { padding: 120px 0 80px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .blog-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #dee2e6; transition: all 0.3s ease; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 8px 40px rgba(0,0,0,0.12); border-color: transparent; }
+        .blog-card-image { aspect-ratio: 16/9; overflow: hidden; }
+        .blog-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .blog-card:hover .blog-card-image img { transform: scale(1.05); }
+        .blog-card-content { padding: 24px; }
+        .blog-card-tag { font-size: 0.75rem; color: #2d6a4f; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .blog-card-content h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; color: #1a1a2e; line-height: 1.4; }
+        .blog-card-content p { font-size: 0.85rem; color: #6c757d; line-height: 1.6; margin-bottom: 16px; }
+        .blog-card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: #6c757d; }
+        .blog-card-cta { color: #2d6a4f; font-weight: 600; font-size: 0.85rem; }
+        .blog-card-cta:hover { text-decoration: underline; }
+        .blog-hero { text-align: center; margin-bottom: 60px; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1a1a2e; margin-bottom: 16px; }
+        .blog-hero p { font-size: 1.05rem; color: #6c757d; max-width: 600px; margin: 0 auto; }
+        @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .blog-hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <header class="header" style="position:fixed;">
+        <div class="container">
+            <a href="index.html" class="logo">LUX<span>DEAL</span></a>
+            <nav class="nav">
+                <a href="index.html#ofertas">Ofertas</a>
+                <a href="index.html#categorias">Categorias</a>
+                <a href="blog.html" style="color:#2d6a4f;font-weight:700;">Blog</a>
+                <a href="index.html#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-page">
+        <div class="container">
+            <div class="blog-hero">
+                <span class="section-tag">Blog de Ofertas</span>
+                <h1>Guias, comparativas y analisis premium</h1>
+                <p>Te ayudamos a elegir los mejores productos con informacion real y descuentos verificados.</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=340&fit=crop" alt="Mejores auriculares 2026">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-tag">Electronica</div>
+                        <h2>Los 5 Mejores Auriculares con Cancelacion de Ruido en 2026</h2>
+                        <p>Comparativa completa entre Sony WH-1000XM5, Bose QC Ultra, AirPods Max, Sennheiser Momentum 4 y B&W Px7. Con precios y donde comprar mas barato.</p>
+                        <div class="blog-card-meta">
+                            <span>24 Jun 2026 · 8 min lectura</span>
+                            <a href="#" class="blog-card-cta">Leer mas →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=600&h=340&fit=crop" alt="Guia jamon iberico">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-tag">Alimentacion</div>
+                        <h2>Guia Definitiva: Como Comprar Jamon Iberico Online (Sin Que Te Timen)</h2>
+                        <p>Diferencias entre cebo, cebo de campo y bellota. Marcas recomendadas, precios justos y donde encontrar las mejores ofertas verificadas.</p>
+                        <div class="blog-card-meta">
+                            <span>23 Jun 2026 · 12 min lectura</span>
+                            <a href="#" class="blog-card-cta">Leer mas →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=340&fit=crop" alt="Nike vs Adidas 2026">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-tag">Ropa</div>
+                        <h2>Nike Air Max 90 vs Adidas Ultraboost: Cual Merece la Pena en 2026?</h2>
+                        <p>Comodidad, durabilidad, estilo y precio. Analizamos ambas zapatillas iconicas y te decimos cual comprar segun tu estilo de vida.</p>
+                        <div class="blog-card-meta">
+                            <span>22 Jun 2026 · 6 min lectura</span>
+                            <a href="#" class="blog-card-cta">Leer mas →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=340&fit=crop" alt="Mejores perfumes hombre 2026">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-tag">Belleza</div>
+                        <h2>Top 7 Perfumes Masculinos Premium por Menos de 80€</h2>
+                        <p>Dior Sauvage, Bleu de Chanel, Tom Ford y mas. Donde encontrar cada uno al mejor precio con ofertas reales verificadas.</p>
+                        <div class="blog-card-meta">
+                            <span>21 Jun 2026 · 7 min lectura</span>
+                            <a href="#" class="blog-card-cta">Leer mas →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=340&fit=crop" alt="Dyson review">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-tag">Hogar</div>
+                        <h2>Dyson V15 Detect: Review Completa Tras 6 Meses de Uso</h2>
+                        <p>Merece la pena gastar 500€+ en una aspiradora? Analizamos rendimiento, bateria, mantenimiento y las mejores alternativas mas baratas.</p>
+                        <div class="blog-card-meta">
+                            <span>20 Jun 2026 · 10 min lectura</span>
+                            <a href="#" class="blog-card-cta">Leer mas →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=340&fit=crop" alt="Amazon Prime Day 2026">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-tag">Ofertas</div>
+                        <h2>Amazon Prime Day 2026: Fecha, Trucos y Mejores Ofertas Anticipadas</h2>
+                        <p>Todo lo que necesitas saber sobre el Prime Day 2026. Trucos para encontrar las ofertas reales, herramientas de seguimiento de precios y nuestras predicciones.</p>
+                        <div class="blog-card-meta">
+                            <span>19 Jun 2026 · 9 min lectura</span>
+                            <a href="#" class="blog-card-cta">Leer mas →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding:0;">
+                <p>&copy; 2026 LUXDEAL. Sitio con <a href="legal.html" style="color:rgba(255,255,255,0.7);text-decoration:underline;">enlaces de afiliado</a>.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
