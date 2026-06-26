@@ -764,3 +764,78 @@ document.querySelectorAll('.faq-question').forEach(btn => {
         if (!wasActive) item.classList.add('active');
     });
 });
+
+
+// ===== DARK MODE TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('luxdeal_theme');
+
+if (savedTheme === 'dark') {
+    document.documentElement.style.colorScheme = 'dark';
+    document.body.classList.add('dark-mode');
+}
+
+themeToggle.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+    localStorage.setItem('luxdeal_theme', isDark ? 'dark' : 'light');
+});
+
+// ===== SCROLL PROGRESS BAR =====
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = progress + '%';
+});
+
+// ===== BACK TO TOP BUTTON =====
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== SAVINGS COUNTER =====
+const savingsCounter = document.getElementById('savingsCounter');
+const savingsAmount = document.getElementById('savingsAmount');
+
+function calculateTotalSavings() {
+    let total = 0;
+    document.querySelectorAll('.product-card').forEach(card => {
+        const current = card.querySelector('.current-price');
+        const original = card.querySelector('.original-price');
+        if (current && original) {
+            const currentVal = parseFloat(current.textContent.replace('$', ''));
+            const originalVal = parseFloat(original.textContent.replace('$', ''));
+            if (originalVal > currentVal) {
+                total += (originalVal - currentVal);
+            }
+        }
+    });
+    return total;
+}
+
+// Show savings counter after scrolling past products
+let savingsShown = false;
+window.addEventListener('scroll', () => {
+    if (!savingsShown && window.scrollY > 800) {
+        savingsShown = true;
+        const total = calculateTotalSavings();
+        savingsAmount.textContent = '$' + total.toFixed(0);
+        savingsCounter.classList.add('visible');
+
+        // Hide after 8 seconds
+        setTimeout(() => {
+            savingsCounter.classList.remove('visible');
+        }, 8000);
+    }
+});
